@@ -3993,6 +3993,18 @@ Transform:
   - {fileID: 2104168542}
   m_Father: {fileID: 285468232}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &822768201 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998928574250729706, guid: 2420deb1cae8d451fb6836c590066a44,
+    type: 3}
+  m_PrefabInstance: {fileID: 460242383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01af4cb6e21e406aa10926b9afede9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &831014336
 GameObject:
   m_ObjectHideFlags: 0
@@ -7888,8 +7900,7 @@ MonoBehaviour:
     Callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6428027509044112487, guid: 4c3c5daf3558246a2b8637a2375fc44c,
-            type: 3}
+        - m_Target: {fileID: 822768201}
           m_TargetAssemblyTypeName: DirectionController, Assembly-CSharp
           m_MethodName: ToggleDirection
           m_Mode: 1
