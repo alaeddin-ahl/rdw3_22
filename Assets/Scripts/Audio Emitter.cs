@@ -18,6 +18,6 @@ public class AudioEmitter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        other.GetComponent<AudioSource>().Play();
+        other.GetComponentInChildren<AudioSource>().Play();
     }
 }
