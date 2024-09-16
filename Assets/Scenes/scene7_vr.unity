@@ -8044,7 +8044,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - Title: toggle audio source position
-    Button: 3
+    Button: 2
     ButtonMode: 1
     Callback:
       m_PersistentCalls:
