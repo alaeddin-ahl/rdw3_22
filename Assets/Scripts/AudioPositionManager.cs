@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioPositionManager : MonoBehaviour
 {
@@ -13,13 +14,8 @@ public class AudioPositionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.P)){
-            var children = GetChildren(gameObject.transform);
-            for (var i = 0; i < children.Length; i++)
-            {
-                Debug.Log(children[i].name);
-                children[i].transform.Rotate(new Vector3(0, 180f, 0));
-            }
+        if(Input.GetKeyDown(KeyCode.P)){
+            ToggleAudioPosition();
         }
     }
 
@@ -33,5 +29,15 @@ public class AudioPositionManager : MonoBehaviour
         }
 
         return children;
+    }
+
+    public void ToggleAudioPosition()
+    {
+        var children = GetChildren(gameObject.transform);
+        for (var i = 0; i < children.Length; i++)
+        {
+            // Debug.Log(children[i].name);
+            children[i].transform.Rotate(new Vector3(0, 90f, 0));
+        }
     }
 }
