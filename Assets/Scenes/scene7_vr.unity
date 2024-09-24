@@ -3171,10 +3171,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1886697360}
-    - targetCorrespondingSourceObject: {fileID: 8925118762124736395, guid: 2420deb1cae8d451fb6836c590066a44,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1886697368}
   m_SourcePrefab: {fileID: 100100000, guid: 2420deb1cae8d451fb6836c590066a44, type: 3}
 --- !u!1 &469479823
 GameObject:
@@ -8701,24 +8697,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Title: Switch azimuth gain
-    Button: 8
-    ButtonMode: 1
-    Callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1886697368}
-          m_TargetAssemblyTypeName: GainMultiplier, Assembly-CSharp
-          m_MethodName: ToggleGainMultiplier
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1468360890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11274,19 +11252,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.42, z: 0}
---- !u!114 &1886697368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886697357}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07610ff1c543ff74b8883312f38d4d64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gainText: {fileID: 1911593082}
 --- !u!1 &1890012095
 GameObject:
   m_ObjectHideFlags: 0
