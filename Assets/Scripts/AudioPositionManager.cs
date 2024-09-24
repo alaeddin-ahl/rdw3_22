@@ -8,6 +8,7 @@ public class AudioPositionManager : MonoBehaviour
 {
     public TextMeshProUGUI audioPosText = null;
     public int currentAngle = 0;
+    private float current_time = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class AudioPositionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        current_time += Time.deltaTime;
         if(Input.GetKeyDown(KeyCode.P)){
             ToggleAudioPosition();
         }
@@ -25,6 +27,10 @@ public class AudioPositionManager : MonoBehaviour
 
     public void ToggleAudioPosition()
     {
+        if(current_time < 2.0f) return;
+
+        current_time = 0f;
+
         GameObject[] audioEmitters = GameObject.FindGameObjectsWithTag("AudioEmitter");
 
         foreach(GameObject obj in audioEmitters)
