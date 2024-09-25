@@ -12,7 +12,7 @@ public class AudioPositionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioPosText.text = "Audio Source Position: +" + currentAngle + " degrees";
+        audioPosText.text = GetAudioText(currentAngle);
     }
 
     // Update is called once per frame
@@ -45,6 +45,12 @@ public class AudioPositionManager : MonoBehaviour
         }
         currentAngle += 90;
         currentAngle %= 360;
-        audioPosText.text = "Audio Source Position: +" + currentAngle + " degrees";
+        audioPosText.text = GetAudioText(currentAngle);
+    }
+
+    private string GetAudioText(int angle) 
+    {
+        // return "Audio Source Position: +" + angle + " degrees";
+        return string.Format("Sound (B): {0}°",angle);
     }
 }
