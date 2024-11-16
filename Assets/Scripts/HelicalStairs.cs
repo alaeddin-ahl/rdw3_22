@@ -13,9 +13,31 @@ public class HelicalStairs : MonoBehaviour
     
     public Transform offsetPosition;
 
+    public bool isGenerateOnStart = true;
+
+    public bool isMatchParametersFromHelicalRotation = false;
+
+    public HilecalRotation helicalRotation;
+
     void Start()
     {
-        GenerateHelicalStairs();
+        if (isMatchParametersFromHelicalRotation)
+        {
+            if (helicalRotation == null)
+            {
+                Debug.LogError("HelicalRotation is not assigned");
+                return;
+            }
+
+            radius = helicalRotation.radius;
+            height = helicalRotation.height;
+            numberOfTurns = helicalRotation.numberOfTurns;
+        }
+
+        if (isGenerateOnStart)
+        {
+            GenerateHelicalStairs();
+        }
     }
     
     void GenerateHelicalStairs()
