@@ -75,6 +75,12 @@ public class HilecalRotation : MonoBehaviour
         
     }
 
+    public void ResetChairPosition() 
+    {
+        var r = this.chairRotation.yRotationNormalized;
+        this.OnChairRotation(Vector3.zero, r);
+    }
+
     // Update is called once per frame
     void Update()
     {

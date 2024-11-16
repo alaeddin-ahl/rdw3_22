@@ -39,8 +39,24 @@ public class HelicalStairs : MonoBehaviour
             GenerateHelicalStairs();
         }
     }
-    
-    void GenerateHelicalStairs()
+
+    public void Update()
+    {
+    }
+
+    public void DeleteChildren()
+    {
+        Debug.Log("DeleteChildren");
+        // Loop through each child of the parent GameObject
+        foreach (Transform child in transform)
+        {
+            // Destroy each child GameObject
+            Destroy(child.gameObject);
+        }
+        Debug.Log("DeleteChildren done");
+    }
+
+    public void GenerateHelicalStairs()
     {
         var parent = this.transform;
 

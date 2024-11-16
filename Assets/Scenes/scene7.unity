@@ -609,6 +609,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: spiral_staircase_colored
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cba1037f1921f024692fa4acac790295,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1057,6 +1062,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5264912781179351223, guid: 2420deb1cae8d451fb6836c590066a44,
+        type: 3}
+      propertyPath: height
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5624157376920795866, guid: 2420deb1cae8d451fb6836c590066a44,
         type: 3}
       propertyPath: m_IsActive
@@ -1209,6 +1219,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 300320164}
+    - targetCorrespondingSourceObject: {fileID: 5032975358130955551, guid: 2420deb1cae8d451fb6836c590066a44,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 844364488}
   m_SourcePrefab: {fileID: 100100000, guid: 2420deb1cae8d451fb6836c590066a44, type: 3}
 --- !u!1 &832575517
 GameObject:
@@ -1259,6 +1273,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &844364486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5032975358130955551, guid: 2420deb1cae8d451fb6836c590066a44,
+    type: 3}
+  m_PrefabInstance: {fileID: 787660372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &844364488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844364486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d6aef8cbb1d4c0bb3a8bf2255abb31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helicalStairs: {fileID: 1127120853}
+  hilecalRotation: {fileID: 1080499563}
 --- !u!4 &1034469999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8058396183343364007, guid: 2420deb1cae8d451fb6836c590066a44,
