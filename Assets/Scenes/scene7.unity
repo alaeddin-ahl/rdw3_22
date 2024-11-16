@@ -1184,6 +1184,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3535084174305395304}
+    - targetCorrespondingSourceObject: {fileID: 1675574880123172888, guid: 2420deb1cae8d451fb6836c590066a44,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1127120852}
     - targetCorrespondingSourceObject: {fileID: 8058396183343364007, guid: 2420deb1cae8d451fb6836c590066a44,
         type: 3}
       insertIndex: -1
@@ -1261,6 +1265,58 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 787660372}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1127120851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1127120852}
+  - component: {fileID: 1127120853}
+  m_Layer: 0
+  m_Name: dynamic stairs parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1127120852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127120851}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 484416802}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &1127120853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127120851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32c746016e134fd9a438cfdab66c632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 2
+  height: 4
+  width: 4
+  numberOfTurns: 1
+  numberOfSteps: 13
+  cubePrefab: {fileID: 8616377172417773967, guid: 04b0fcf0377874d73855d9cf24996de1,
+    type: 3}
+  offsetPosition: {fileID: 1127120852}
 --- !u!4 &1906319297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cba1037f1921f024692fa4acac790295,
@@ -1682,6 +1738,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Audio Anchors
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023075798917774639, guid: 464f7f34c335b3f4380587702df83e3e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1198185595332541273, guid: 464f7f34c335b3f4380587702df83e3e,
         type: 3}
