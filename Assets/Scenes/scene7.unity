@@ -1291,8 +1291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d6aef8cbb1d4c0bb3a8bf2255abb31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  helicalSetting: 1
   helicalStairs: {fileID: 1127120853}
-  hilecalRotation: {fileID: 1080499563}
+  helicalRotation: {fileID: 1080499563}
 --- !u!4 &1034469999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8058396183343364007, guid: 2420deb1cae8d451fb6836c590066a44,

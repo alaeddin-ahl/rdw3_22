@@ -21,19 +21,6 @@ public class HelicalStairs : MonoBehaviour
 
     void Start()
     {
-        if (isMatchParametersFromHelicalRotation)
-        {
-            if (helicalRotation == null)
-            {
-                Debug.LogError("HelicalRotation is not assigned");
-                return;
-            }
-
-            radius = helicalRotation.radius;
-            height = helicalRotation.height;
-            numberOfTurns = helicalRotation.numberOfTurns;
-        }
-
         if (isGenerateOnStart)
         {
             GenerateHelicalStairs();
@@ -58,6 +45,19 @@ public class HelicalStairs : MonoBehaviour
 
     public void GenerateHelicalStairs()
     {
+        if (isMatchParametersFromHelicalRotation)
+        {
+            if (helicalRotation == null)
+            {
+                Debug.LogError("HelicalRotation is not assigned");
+                return;
+            }
+
+            radius = helicalRotation.radius;
+            height = helicalRotation.height;
+            numberOfTurns = helicalRotation.numberOfTurns;
+        }
+
         var parent = this.transform;
 
         for (int i = 0; i < numberOfSteps; i++)

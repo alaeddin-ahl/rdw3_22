@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class HelicalController : MonoBehaviour
 {
+
+    public enum HelicalSetting
+    {
+        Setting1,
+        Setting4
+    }
+
+    public HelicalSetting helicalSetting = HelicalSetting.Setting1;
+    private HelicalSetting previousHelicalSetting;
+
     public HelicalStairs helicalStairs;
-    public HelicalRotation hilecalRotation;
+    public HelicalRotation helicalRotation;
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +26,6 @@ public class HelicalController : MonoBehaviour
         // Start the LateStart coroutine
         StartCoroutine(LateStart());
     }
-
-    
 
 
     IEnumerator LateStart()
@@ -37,38 +45,60 @@ public class HelicalController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            UpdateSetting1();
+            this.helicalSetting = HelicalSetting.Setting1;
+            this.ApplyHelicalSetting();
         }
 
         
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            UpdateSetting4();
+            this.helicalSetting = HelicalSetting.Setting4;
+            this.ApplyHelicalSetting();
         }
+
+        if (previousHelicalSetting!=helicalSetting)
+        {
+            ApplyHelicalSetting();
+        }
+    }
+
+    void ApplyHelicalSetting()
+    {
+        switch (helicalSetting)
+        {
+            case HelicalSetting.Setting1:
+                UpdateSetting1();
+                break;
+            case HelicalSetting.Setting4:
+                UpdateSetting4();
+                break;
+        }
+        
+        previousHelicalSetting = helicalSetting;
     }
 
     void UpdateSetting1()
     {
-        hilecalRotation.transform.position = new Vector3(0, 0, 0);
-
-        hilecalRotation.height = 0.0f;
-        helicalStairs.height = 0.0f;
+        helicalRotation.transform.position = new Vector3(0, 0, 0);
+        helicalRotation.height = 0.0f;
+        helicalRotation.numberOfTurns = .5f;
+        
         helicalStairs.DeleteChildren();
         helicalStairs.GenerateHelicalStairs();
 
-        hilecalRotation.ResetChairPosition();
+        helicalRotation.ResetChairPosition();
     }
 
     void UpdateSetting4()
     {
-        hilecalRotation.transform.position = new Vector3(0, 0, 0);
+        helicalRotation.transform.position = new Vector3(0, 0, 0);
+        helicalRotation.height = 4.0f;
+        helicalRotation.numberOfTurns = 1.0f;
 
-        hilecalRotation.height = 4.0f;
-        helicalStairs.height = 4.0f;
         helicalStairs.DeleteChildren();
         helicalStairs.GenerateHelicalStairs();
 
-        hilecalRotation.ResetChairPosition();
+        helicalRotation.ResetChairPosition();
     }
 }
 
