@@ -17,7 +17,7 @@ public class HelicalStairs : MonoBehaviour
 
     public bool isMatchParametersFromHelicalRotation = false;
 
-    public HilecalRotation helicalRotation;
+    public HelicalRotation helicalRotation;
 
     void Start()
     {

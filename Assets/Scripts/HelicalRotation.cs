@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class HilecalRotation : MonoBehaviour
+public class HelicalRotation : MonoBehaviour
 {
     public ChairRotation chairRotation;
     public Direction direction;

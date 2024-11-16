@@ -5,7 +5,7 @@ using UnityEngine;
 public class HelicalController : MonoBehaviour
 {
     public HelicalStairs helicalStairs;
-    public HilecalRotation hilecalRotation;
+    public HelicalRotation hilecalRotation;
 
     // Start is called before the first frame update
     void Start()
