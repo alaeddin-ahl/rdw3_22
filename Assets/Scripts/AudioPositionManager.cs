@@ -51,6 +51,6 @@ public class AudioPositionManager : MonoBehaviour
     private string GetAudioText(int angle) 
     {
         // return "Audio Source Position: +" + angle + " degrees";
-        return string.Format("Sound (B): {0}°",angle);
+        return string.Format("(B) Sound: {0}°",angle);
     }
 }

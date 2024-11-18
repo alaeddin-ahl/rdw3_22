@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class HelicalController : MonoBehaviour
@@ -16,6 +17,8 @@ public class HelicalController : MonoBehaviour
 
     public HelicalStairs helicalStairs;
     public HelicalRotation helicalRotation;
+
+    public TextMeshProUGUI gainText;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +45,6 @@ public class HelicalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             this.helicalSetting = HelicalSetting.Setting1;
@@ -51,14 +53,31 @@ public class HelicalController : MonoBehaviour
 
         
         if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
+        {     
             this.helicalSetting = HelicalSetting.Setting4;
             this.ApplyHelicalSetting();
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            ToggleHelicalSetting();
         }
 
         if (previousHelicalSetting!=helicalSetting)
         {
             ApplyHelicalSetting();
+        }
+    }
+
+    public void ToggleHelicalSetting()
+    {
+        if (helicalSetting == HelicalSetting.Setting1)
+        {
+            helicalSetting = HelicalSetting.Setting4;
+        }
+        else
+        {
+            helicalSetting = HelicalSetting.Setting1;
         }
     }
 
@@ -75,6 +94,25 @@ public class HelicalController : MonoBehaviour
         }
         
         previousHelicalSetting = helicalSetting;
+
+        gainText.text = string.Format("(Y) Gain factor: {0} (Height: {1} Turns: {2})", 
+            GetGainText(),
+            helicalRotation.height,
+            helicalRotation.numberOfTurns);
+    }
+
+    string GetGainText()
+    {
+        switch (helicalSetting)
+        {
+            case HelicalSetting.Setting1:
+                return "1";
+            case HelicalSetting.Setting4:
+                return "2";
+
+            default:
+                return "?";
+        }
     }
 
     void UpdateSetting1()

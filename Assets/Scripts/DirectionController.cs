@@ -67,6 +67,6 @@ public class DirectionController : MonoBehaviour
                 break;
         }
 
-        directionText.text = string.Format("Direction (A): {0}", currentDirection.ToString());
+        directionText.text = string.Format("(A) Direction: {0}", currentDirection.ToString());
     }
 }
