@@ -4398,11 +4398,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5142239041939957946, guid: 2420deb1cae8d451fb6836c590066a44,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5266522133497210236, guid: 2420deb1cae8d451fb6836c590066a44,
         type: 3}
       propertyPath: controllerTransform
       value: 
       objectReference: {fileID: 1132359401}
+    - target: {fileID: 5779390629885457393, guid: 2420deb1cae8d451fb6836c590066a44,
+        type: 3}
+      propertyPath: stepPrefab
+      value: 
+      objectReference: {fileID: 8616377172417773967, guid: 04b0fcf0377874d73855d9cf24996de1,
+        type: 3}
     - target: {fileID: 5998928574250729706, guid: 2420deb1cae8d451fb6836c590066a44,
         type: 3}
       propertyPath: directionText

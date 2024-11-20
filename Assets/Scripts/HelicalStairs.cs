@@ -9,7 +9,8 @@ public class HelicalStairs : MonoBehaviour
     public float width = 4.0f;
     public float numberOfTurns = 1f;
     public int numberOfSteps = 13;
-    public GameObject cubePrefab; // Assign a cube prefab in the inspector
+
+    public GameObject stepPrefab; 
     
     public Transform offsetPosition;
 
@@ -60,8 +61,16 @@ public class HelicalStairs : MonoBehaviour
 
         var parent = this.transform;
 
+        float hueStep = 360f / numberOfSteps;
+
         for (int i = 0; i < numberOfSteps; i++)
         {
+            float hue = 360f - (i * hueStep);
+
+            // Convert HSL to RGB (using 100% saturation and 50% lightness)
+            Color color = HSLColorGenerator.HSLToRGB(hue, 1f, .5f);
+
+
             float t = (2 * Mathf.PI * numberOfTurns / numberOfSteps) * i;
             float x = radius * Mathf.Cos(-t);
             float y = radius * Mathf.Sin(-t);
@@ -85,9 +94,12 @@ public class HelicalStairs : MonoBehaviour
             Quaternion rotation = localRotation;
             
 
-            GameObject a = Instantiate(cubePrefab, position, rotation, parent);
+            GameObject a = Instantiate(stepPrefab, position, rotation, parent);
 
             a.GetComponent<CubeController>().id = i;
+
+            var objectRenderer = a.GetComponentInChildren<Renderer>();
+            objectRenderer.material.color = color;
         }
     }
 
