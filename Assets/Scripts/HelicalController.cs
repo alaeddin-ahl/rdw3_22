@@ -17,6 +17,7 @@ public class HelicalController : MonoBehaviour
 
     public HelicalStairs helicalStairs;
     public HelicalRotation helicalRotation;
+    public ChairRotation chairRotation;
 
     public TextMeshProUGUI gainText;
 
@@ -118,8 +119,13 @@ public class HelicalController : MonoBehaviour
     void UpdateSetting1()
     {
         helicalRotation.transform.position = new Vector3(0, 0, 0);
-        helicalRotation.height = 0.0f;
-        helicalRotation.numberOfTurns = .5f;
+        // helicalRotation.height = 0.0f;
+        // helicalRotation.numberOfTurns = .5f;
+        helicalRotation.height = 4.0f;
+        helicalRotation.numberOfTurns = 1.0f;
+
+        chairRotation.minRotation = -179;
+        chairRotation.maxRotation = 179;
         
         helicalStairs.DeleteChildren();
         helicalStairs.GenerateHelicalStairs();
@@ -132,6 +138,9 @@ public class HelicalController : MonoBehaviour
         helicalRotation.transform.position = new Vector3(0, 0, 0);
         helicalRotation.height = 4.0f;
         helicalRotation.numberOfTurns = 1.0f;
+
+        chairRotation.minRotation = -90;
+        chairRotation.maxRotation = 90;
 
         helicalStairs.DeleteChildren();
         helicalStairs.GenerateHelicalStairs();
