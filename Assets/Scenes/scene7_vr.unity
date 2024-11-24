@@ -4405,6 +4405,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5266522133497210236, guid: 2420deb1cae8d451fb6836c590066a44,
         type: 3}
+      propertyPath: maxRotation
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266522133497210236, guid: 2420deb1cae8d451fb6836c590066a44,
+        type: 3}
+      propertyPath: minRotation
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266522133497210236, guid: 2420deb1cae8d451fb6836c590066a44,
+        type: 3}
       propertyPath: controllerTransform
       value: 
       objectReference: {fileID: 1132359401}
