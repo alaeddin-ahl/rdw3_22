@@ -16,6 +16,7 @@ public class ChairRotation : MonoBehaviour
     public Transform controllerTransform;
 
     public float yController = 0.0f;
+    public float yControllerNormalized = 0.0f;
     public float yControllerLast = 0.0f;
 
     public float yRotationNormalized = 0.0f;
@@ -72,19 +73,19 @@ public class ChairRotation : MonoBehaviour
         {
             Vector3 eularController = controllerTransform.rotation.eulerAngles;
             yController = eularController.y;
-            yController = NormalizeAngle(yController);
+            yControllerNormalized = NormalizeAngle(yController);
 
-            if (yControllerLast != yController 
-                && IsValidRotation(yController))
+            if (yControllerLast != yControllerNormalized 
+                && IsValidRotation(yControllerNormalized))
             {
-                yControllerLast = yController;
+                yControllerLast = yControllerNormalized;
 
                 this.transform.eulerAngles = new Vector3(
                     this.transform.eulerAngles.x,
-                    yController,
+                    yControllerNormalized,
                     this.transform.eulerAngles.z);
 
-                this.OnChairRotate?.Invoke(Vector3.zero, yController);
+                this.OnChairRotate?.Invoke(Vector3.zero, yControllerNormalized);
             }
         }
     }

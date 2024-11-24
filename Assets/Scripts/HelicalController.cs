@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,6 +21,7 @@ public class HelicalController : MonoBehaviour
     public ChairRotation chairRotation;
 
     public TextMeshProUGUI gainText;
+    public TextMeshProUGUI rotationText;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,14 @@ public class HelicalController : MonoBehaviour
         Debug.Log("LateStart called");
 
         UpdateSetting4();
+
+        // chairRotation.OnChairRotate += OnChairRotate;
+    }
+
+    private void OnChairRotate(Vector3 rotation, float yRotationNormalized)
+    {
+        rotationText.text = string.Format("Chair rotation: {0:F0} ({1:F0})", 
+            yRotationNormalized);
     }
 
     // Update is called once per frame
@@ -68,18 +78,24 @@ public class HelicalController : MonoBehaviour
         {
             ApplyHelicalSetting();
         }
+
+        rotationText.text = string.Format("Chair rotation: {0:F0}", 
+            chairRotation.yControllerNormalized);
     }
 
     public void ToggleHelicalSetting()
     {
-        if (helicalSetting == HelicalSetting.Setting1)
-        {
-            helicalSetting = HelicalSetting.Setting4;
-        }
-        else
-        {
-            helicalSetting = HelicalSetting.Setting1;
-        }
+        // Get all possible enum values
+        var values = Enum.GetValues(typeof(HelicalSetting));
+        
+        // Find the current index
+        int currentIndex = Array.IndexOf(values, helicalSetting);
+        
+        // Move to next value, or wrap around to first value
+        int nextIndex = (currentIndex + 1) % values.Length;
+        
+        // Set the new value
+        helicalSetting = (HelicalSetting)values.GetValue(nextIndex);
     }
 
     void ApplyHelicalSetting()
