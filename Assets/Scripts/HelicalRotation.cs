@@ -38,7 +38,7 @@ public class HelicalRotation : MonoBehaviour
         // If direction is inward
         if (!direction.is90Deg && !direction.isReverseDirection)
         {
-            return Mathf.InverseLerp(-max, min, angle);
+            return Mathf.InverseLerp(min, max, angle);
         }
         else 
         {

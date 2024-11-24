@@ -96,10 +96,10 @@ public class HelicalController : MonoBehaviour
         
         previousHelicalSetting = helicalSetting;
 
-        gainText.text = string.Format("(Y) Gain factor: {0} (Height: {1} Turns: {2})", 
+        gainText.text = string.Format("(Y) Gain factor: {0} (min: {1} max: {2})", 
             GetGainText(),
-            helicalRotation.height,
-            helicalRotation.numberOfTurns);
+            chairRotation.minRotation,
+            chairRotation.maxRotation);
     }
 
     string GetGainText()
