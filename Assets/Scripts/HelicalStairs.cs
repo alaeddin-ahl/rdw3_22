@@ -99,7 +99,11 @@ public class HelicalStairs : MonoBehaviour
             a.GetComponent<CubeController>().id = i;
 
             var objectRenderer = a.GetComponentInChildren<Renderer>();
-            objectRenderer.material.color = color;
+            // objectRenderer.material.color = color;
+            var material = objectRenderer.material;
+
+            color.a = 0.5f; // 50% transparent
+            material.color = color;
         }
     }
 
