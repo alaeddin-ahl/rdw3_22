@@ -20,7 +20,7 @@ public class AudioPositionManager : MonoBehaviour
     void Update()
     {
         current_time += Time.deltaTime;
-        if(Input.GetKeyDown(KeyCode.P)){
+        if(Input.GetKeyDown(KeyCode.A)){
             ToggleAudioPosition();
         }
     }
@@ -46,6 +46,23 @@ public class AudioPositionManager : MonoBehaviour
     private string GetAudioText(int angle) 
     {
         // return "Audio Source Position: +" + angle + " degrees";
-        return string.Format("(B) Sound: {0}°",angle);
+        return string.Format("(B) Sound: {0}",GetAngleText(angle));
+    }
+    
+    private string GetAngleText(int angle) 
+    {
+        switch(angle)
+        {
+            case 0:
+                return "core";
+            case 90:
+                return "proximal";
+            case 180:
+                return "medial";
+            case 270:
+                return "distal";
+            default:
+                return angle.ToString();
+        }
     }
 }

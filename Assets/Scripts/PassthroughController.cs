@@ -31,7 +31,7 @@ public class PassthroughController : MonoBehaviour
     void UpdateText()
     {
         if (passThroughText != null){
-            passThroughText.text = passthroughLayer.enabled ? "Passthrough enabled" : "Passthrough disabled";
+            passThroughText.text = "(X) Passthrough: " + (passthroughLayer.enabled ? "On" : "Off");
         }
     }
 
