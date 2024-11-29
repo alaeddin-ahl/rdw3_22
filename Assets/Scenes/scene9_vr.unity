@@ -2989,6 +2989,7 @@ GameObject:
   - component: {fileID: 664443159}
   - component: {fileID: 664443158}
   - component: {fileID: 664443157}
+  - component: {fileID: 664443160}
   m_Layer: 0
   m_Name: '[BuildingBlock] Passthrough'
   m_TagString: Untagged
@@ -3095,6 +3096,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &664443160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664443156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0c0e5458ec145748d4bad8b9689b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passthroughLayer: {fileID: 0}
+  passThroughText: {fileID: 2084922338}
 --- !u!1 &672054705
 GameObject:
   m_ObjectHideFlags: 0
@@ -7775,15 +7790,15 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Title: hide/reveal the instruction text
+  - Title: toggle pasthrough
     Button: 4
     ButtonMode: 1
     Callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2084922338}
-          m_TargetAssemblyTypeName: InstructionTextManager, Assembly-CSharp
-          m_MethodName: ToggleInstructionText
+        - m_Target: {fileID: 664443160}
+          m_TargetAssemblyTypeName: PassthroughController, Assembly-CSharp
+          m_MethodName: TogglePassthrough
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7794,7 +7809,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - Title: Switch azimuth gain
-    Button: 12
+    Button: 8
     ButtonMode: 1
     Callback:
       m_PersistentCalls:
@@ -11205,10 +11220,24 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1132359401}
     m_Modifications:
+    - target: {fileID: 305553855582451704, guid: cad06d1422b2547abbf3d9fb183392a5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 3695852748202421669, guid: cad06d1422b2547abbf3d9fb183392a5,
         type: 3}
       propertyPath: m_Name
       value: canvasLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188188108646314395, guid: cad06d1422b2547abbf3d9fb183392a5,
+        type: 3}
+      propertyPath: m_text
+      value: "Welcome to Redirected Seating!\r\n\r\n1. Place the left controller
+        on the left side of the chair armrest.\r\n2. Sit down on the chair and grab
+        the right controller.\r\n3. Rotate the chair and view and feel the environment
+        changes.\r\n\nKeymaps: \n\tA = switch view direction, \n\tB = toggle audio
+        source positions\n\tX = toggle passthrough\n\tY = toggle azimuth gain "
       objectReference: {fileID: 0}
     - target: {fileID: 7355246783533233781, guid: cad06d1422b2547abbf3d9fb183392a5,
         type: 3}
@@ -11347,14 +11376,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &2084922338 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2930040143388563281, guid: cad06d1422b2547abbf3d9fb183392a5,
+  m_CorrespondingSourceObject: {fileID: 8618841047028918407, guid: cad06d1422b2547abbf3d9fb183392a5,
     type: 3}
   m_PrefabInstance: {fileID: 2084922334}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97163bc97d8fe5e4e94676d977ee4388, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2095864721
