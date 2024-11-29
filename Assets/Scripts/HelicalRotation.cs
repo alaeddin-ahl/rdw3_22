@@ -36,11 +36,11 @@ public class HelicalRotation : MonoBehaviour
         float max = chairRotation.maxRotation;
 
         // If direction is inward
-        if (!direction.is90Deg && !direction.isReverseDirection)
-        {
-            return Mathf.InverseLerp(min, max, angle);
-        }
-        else 
+        // if (!direction.is90Deg && !direction.isReverseDirection)
+        // {
+        //     return Mathf.InverseLerp(min, max, angle);
+        // }
+        // else 
         {
             return Mathf.InverseLerp(max, min, angle);
         }
